@@ -1,0 +1,51 @@
+{
+  "id": "/rfp/rfp-web",
+  "cmd": null,
+  "cpus": 1,
+  "mem": 999,
+  "disk": 3000,
+  "instances": 1,
+  "container": {
+    "docker": {
+      "image": "eubrabigsea/rfp-web",
+      "forcePullImage": true,
+      "network": "BRIDGE",
+      "parameters": [
+        {
+          "key": "volume",
+          "value": "/etc/hosts:/etc/hosts"
+        },
+        {
+          "key": "env",
+          "value": "PSQL_PASSW=bigsea"
+        },
+        {
+          "key": "env",
+          "value": "MESOS_DNS_IP_PORT=testbsserver:8123"
+        },
+        {
+          "key": "env",
+          "value": "MESOS_DNS_RFP_DB_ID=_rfp-db-lb-rfp._tcp.marathon.mesos"
+        },
+        {
+          "key": "env",
+          "value": "MESOS_DNS_RFP_BR_ID_CURITIBA=_rfp-br-curitiba-rfp._tcp.marathon.mesos"
+        },
+        {
+          "key": "name",
+          "value": "rfp-web-instance"
+        }
+      ],
+      "portMappings": [
+        {
+          "containerPort": 10100,
+          "hostPort": 0,
+          "protocol": "tcp",
+          "name": "10100",
+          "labels": null
+        }
+      ]
+    },
+    "type": "DOCKER"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "/rfp/rfp-db",
+  "cmd": null,
+  "cpus": 1,
+  "mem": 999,
+  "disk": 6000,
+  "instances": 1,
+  "container": {
+    "docker": {
+      "image": "eubrabigsea/rfp-db",
+      "forcePullImage": true,
+      "network": "BRIDGE",
+      "parameters": [
+        {
+          "key": "name",
+          "value": "rfp-db-instance"
+        },
+        {
+          "key": "env",
+          "value": "POSTGRES_PASSW=bigsea"
+        }
+      ],
+      "portMappings": [
+        {
+          "containerPort": 5432,
+          "hostPort": 0,
+          "protocol": "tcp",
+          "name": "5432",
+          "labels": null
+        }
+      ]
+    },
+    "type": "DOCKER",
+    "volumes": []
+  },
+  "labels": {
+    "HAPROXY_GROUP": "external"
+  },
+  "portDefinitions": [
+    {
+      "port": 10004,
+      "protocol": "tcp",
+      "labels": {}
+    }
+  ]
+}

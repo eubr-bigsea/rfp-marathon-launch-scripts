@@ -1,0 +1,35 @@
+{
+  "id": "/rfp/rfp-br-curitiba",
+  "cmd": null,
+  "args": [
+    "python", "/home/best_trip_recommender_code/run_api.py", "1", "lasso", "/home/best_trip_recommender_code/", "/home/best_trip_recommender_code/data/prediction_data.csv", "/home/best_trip_recommender_code/data/schedule.csv", "/home/best_trip_recommender_code/data/models.rda"
+  ],  
+  "cpus": 1,
+  "mem": 999,
+  "disk": 3000,
+  "instances": 1,
+  "container": {
+    "docker": {
+      "image": "eubrabigsea/best_trip_recommender",
+      "forcePullImage": true,
+      "network": "BRIDGE",
+      "portMappings": [
+        {
+          "containerPort": 8080,
+          "hostPort": 0,
+          "protocol": "tcp",
+          "name": "8080",
+          "labels": null
+        }
+      ]
+    }, 
+    "volumes": [
+      {
+        "containerPath": "/home/best_trip_recommender_code/data/",
+        "hostPath": "/home/bigsea/best_trip_recommender_data/curitiba/data",
+        "mode": "RW"
+      }
+    ],
+    "type": "DOCKER"
+  }
+}
