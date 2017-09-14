@@ -22,10 +22,6 @@
         {
           "key": "env",
           "value": "MESOS_DNS_SERVICES=_rfp-db-rfp._tcp.marathon.mesos"
-        },
-        {
-          "key": "name",
-          "value": "rfp-db-lb-instance"
         }
       ],
       "portMappings": [

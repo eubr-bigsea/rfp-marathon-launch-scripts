@@ -12,12 +12,8 @@
       "network": "BRIDGE",
       "parameters": [
         {
-          "key": "name",
-          "value": "rfp-db-instance"
-        },
-        {
           "key": "env",
-          "value": "POSTGRES_PASSW=bigsea"
+          "value": "POSTGRES_PASSW=default"
         }
       ],
       "portMappings": [

@@ -21,24 +21,16 @@
         },
         {
           "key": "env",
-          "value": "MESOS_DNS_IP_PORT=testbsserver:8123"
+          "value": "MESOS_DNS_IP_PORT=bigseaserver:8123"
         },
         {
           "key": "env",
-          "value": "MESOS_DNS_RFP_DB_ID=_rfp-db-lb-rfp._tcp.marathon.mesos"
-        },
-        {
-          "key": "env",
-          "value": "MESOS_DNS_RFP_BR_ID_CURITIBA=_rfp-br-curitiba-rfp._tcp.marathon.mesos"
-        },
-        {
-          "key": "name",
-          "value": "rfp-web-instance"
+          "value": "MESOS_DNS_RFP_DB_ID=_rfp-db-rfp._tcp.marathon.mesos"
         }
       ],
       "portMappings": [
         {
-          "containerPort": 10100,
+          "containerPort": 8080,
           "hostPort": 0,
           "protocol": "tcp",
           "name": "10100",
